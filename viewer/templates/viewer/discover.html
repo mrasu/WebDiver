@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<ul>
+  {% for link in link_set %}
+    <li>
+      <a href={{ link.link.link }}>
+        {{ link.link.name }}<br>
+        {% if link.link.img_link %}
+          <img src={{ link.link.img_link }}>
+        {% endif %}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+</body>
+</html>
