@@ -8,7 +8,7 @@
 <ul>
   {% for link in link_set %}
     <li>
-      <a href={{ link.link.link }}>
+      <a href={{ link.link.abs_link }}>
         {{ link.link.name }}<br>
         {% if link.link.img_link %}
           <img src={{ link.link.img_link }}>

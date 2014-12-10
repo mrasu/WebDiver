@@ -13,6 +13,7 @@ class VisitedLink(models.Model):
     page = models.ForeignKey(WebPage)
     name = models.CharField(max_length=1000, null=True)
     link = models.CharField(max_length=200)
+    abs_link = models.CharField(max_length=200)
     img_link = models.CharField(max_length=200, null=True)
 
 

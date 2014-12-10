@@ -37,7 +37,8 @@ def scrape_page(page):
     if new_discovered:
         new_visited = [
             VisitedLink(
-                link=urljoin(page.url, url.get("href")),
+                link=url.get("href"),
+                abs_link=urljoin(page.url, url.get("href")),
                 page=page,
                 name=url.string,
                 img_link=urljoin(page.url, url.find("img").get("src")) if url.find("img") else None)
