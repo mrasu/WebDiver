@@ -54,6 +54,6 @@ docs/_build/
 target/
 
 .idea/
-
+static/
 *.sqlite3
 *.iml
