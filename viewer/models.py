@@ -1,5 +1,5 @@
-import datetime
 from django.db import models
+from django.utils import timezone
 
 
 class WebPage(models.Model):
@@ -23,7 +23,7 @@ class NewDiscover(models.Model):
     time = models.DateTimeField()
 
     def discovers_today(self):
-        return (datetime.datetime.now() - self.time.replace(tzinfo=None)).days < 1
+        return (timezone.now() - self.time).days < 1
 
 
 class NewDiscoverLink(models.Model):
