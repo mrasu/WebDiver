@@ -1,3 +1,4 @@
+import datetime
 from django.db import models
 
 
@@ -21,9 +22,12 @@ class NewDiscover(models.Model):
     name = models.CharField(max_length=100)
     time = models.DateTimeField()
 
+    def discovers_today(self):
+        return (datetime.datetime.now() - self.time.replace(tzinfo=None)).days < 1
+
 
 class NewDiscoverLink(models.Model):
-    discover = models.ForeignKey(NewDiscover)
+    discover = models.ForeignKey(NewDiscover, related_name="links")
     link = models.ForeignKey(VisitedLink)
 
 
